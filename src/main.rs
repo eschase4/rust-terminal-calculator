@@ -1,7 +1,7 @@
 use inquire::InquireError;
 use std::io;
 fn main() {
-    println!("*******************CALCULATOR********************");
+    println!("**********************CALCULATOR***********************");
     calculate();
 }
 
@@ -61,6 +61,7 @@ fn recalculate(result: f64){
     } else if ans == "Divide" {
         divide(result, num);
     }
+    return
 }
 
 fn questions(result: f64){
@@ -71,6 +72,7 @@ fn questions(result: f64){
     
     if ans == "Yes" {
         recalculate(result);
+        return
     }
     
     // Reset Calculator
@@ -80,8 +82,10 @@ fn questions(result: f64){
     if ans == "Yes" {
         calculate();
     } else {
+        println!("*******************************************************");
         return;
     }
+    return
 }
 
 fn add(num1: f64, num2: f64){
